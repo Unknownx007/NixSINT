@@ -1,5 +1,7 @@
 # NixSINT
 
+<img width="489" height="229" alt="1" src="https://github.com/user-attachments/assets/f05e40ae-01a8-43f4-b3aa-9c35464904d8" />
+
 An OSINT username checker by **DEDSEC**.
 
 **NixSINT** is a OSINT tool which lets you search username many popular websites. If you're investigating a person of interest, verifying an online identity, or simply curious about your own digital footprint, this project powers the tools that make that possible.
@@ -8,6 +10,12 @@ An OSINT username checker by **DEDSEC**.
 
 *NixSINT* provides a pre-stored dataabase.
 *if you want to expand the data based you can manually add more elements to DB according to given instructions below.*
+
+## Sites-list 
+
+``python3 main.py --list-sites``
+
+<img width="1178" height="813" alt="5" src="https://github.com/user-attachments/assets/a1ed56bd-2236-4775-9c1c-e127d41fd32a" />
 
 ## Two tiers, shown separately, never mixed
 
