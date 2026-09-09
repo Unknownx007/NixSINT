@@ -2,22 +2,12 @@
 
 An OSINT username checker by **DEDSEC**.
 
-No third-party datasets. **29 hand-verified sites** split into two
-honest tiers, plus one deliberate hard exclusion.
+**NixSINT** is a OSINT tool which lets you search username many popular websites. If you're investigating a person of interest, verifying an online identity, or simply curious about your own digital footprint, this project powers the tools that make that possible.
 
-## The PyPI false positive - what was actually wrong, and the fix
+**REMEMBER!! NOT EVERY AUTOMATED TOOLS ARE 100% CORRECT EVERYTIME, YOU SHOULD CHECK MANUALLY AS WELL**
 
-A `200 OK` status alone never proves a profile is real - it can also be
-a generic fallback page, a CDN/WAF edge case, or (as apparently
-happened) something serving 200 where a browser gets a clean 404. The
-fix: **every plain-page check now also requires the username to
-literally appear in the response body** before it's reported as found.
-A 200 with no trace of the username anywhere in the page is now
-reported as `unknown`, never as a hit. This is checked in
-`_verified_status_check()` in `sites.py`, and it's covered by an
-automated test that reproduces the exact failure mode (200 + no
-username in body → must return `None`, not `True`) before this was
-shipped.
+*NixSINT* provides a pre-stored dataabase.
+*if you want to expand the data based you can manually add more elements to DB according to given instructions below.*
 
 ## Two tiers, shown separately, never mixed
 
@@ -47,13 +37,6 @@ Every check, in both tiers, follows the same rule: only return
 rate-limit (429), unexpected status, a bot-block page - returns `None`
 and is reported as unknown, not guessed.
 
-## New look
-
-The banner, progress bar, and all table styling now use a neon-green /
-electric-cyan "terminal" theme instead of the original red. The
-"NIXSINT" logo is built from a small letter-glyph table in `banner.py`
-(rather than hand-typed ASCII art) so it can't end up misaligned.
-
 ## Project layout
 
 ```
@@ -69,7 +52,7 @@ NixSINT/
 ## Setup (Arch Linux / any Linux)
 
 ```bash
-git clone <your-repo-url> NixSINT
+git clone https://github.com/Unknownx007/NixSINT
 cd NixSINT
 python3 -m venv venv
 source venv/bin/activate
